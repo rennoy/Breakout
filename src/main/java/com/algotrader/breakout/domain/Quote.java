@@ -6,6 +6,9 @@ import lombok.Data;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * Financial pricing data block
+ */
 @Data
 @AllArgsConstructor
 public class Quote {
@@ -16,6 +19,10 @@ public class Quote {
     private BigDecimal high;
     private BigDecimal close;
 
+    /**
+     * toString override
+     * @return a formatted string
+     */
     @Override
     public String toString() {
         return  dateTime.toString()

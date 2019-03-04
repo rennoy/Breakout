@@ -15,6 +15,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.stream.BaseStream;
 
+/**
+ *
+ */
 @Slf4j
 @Setter
 @Component
@@ -23,6 +26,10 @@ public class FxQuoteClient {
 
     private String name;
 
+    /**
+     * Parsing a structured text file with columns datetime - open - low - high - close into a Quote object
+     * @return a flux or single quotes
+     */
     public Flux<Quote> getQuotes() {
 
         Path path = Paths.get(name);
@@ -45,6 +52,7 @@ public class FxQuoteClient {
                                      );
                                  } catch (Exception e) {
                                      log.debug(e.getMessage());
+                                     log.error(e.getStackTrace().toString());
                                      return null;
                                  }
                             }
