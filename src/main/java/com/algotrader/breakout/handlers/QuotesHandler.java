@@ -55,8 +55,8 @@ public interface QuotesHandler {
      * @param k std deviations from the mean
      * @return integers -
      * first integer == 1 if close above the upper bollinger band
-     * first integer == 1 if close above the mean
-     * first integer == 1 if close below the lower bollinger band
+     * second integer == 1 if close above the mean
+     * third integer == 1 if close below the lower bollinger band
      */
     default Integer[] bollingerBandIndicator(List<Quote> quotes, Long k) {
 
@@ -75,8 +75,8 @@ public interface QuotesHandler {
      * @param k std deviations from the mean
      * @return integers -
      * first integer == 1 if close above the upper bollinger band
-     * first integer == 1 if close above the mean
-     * first integer == 1 if close below the lower bollinger band
+     * second integer == 1 if close above the mean
+     * third integer == 1 if close below the lower bollinger band
      */
     default Integer[] bollingerBandIndicator(BigDecimal[] firstOrderStats, BigDecimal stdev, Long k) {
 
